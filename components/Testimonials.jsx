@@ -13,7 +13,7 @@ const Testimonials = ({ testimonialData }) => {
                         <Image src={`/img/${user.logo}`} width="30" height="30" alt=""/>
                         <p className={styles.comment}>{user.comment}</p>
                         <div className={styles.person}>
-                            <Image src={`/img/${user.avatar}`} width="45" height="45" alt=""/>
+                            <Image classname={styles.avatar} src={`/img/${user.avatar}`} width="45" height="45" objectFit="cover" alt=""/>
                             <div className={styles.info}>
                                 <span className={styles.username}>{user.name}</span>
                                 <span className={styles.jobTitle}>{user.title}</span>
