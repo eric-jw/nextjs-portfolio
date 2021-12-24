@@ -1,11 +1,11 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Intro from '../components/Intro'
 import Portfolio from '../components/Portfolio'
-import { data } from "../data"
+import Testimonials from '../components/Testimonials'
+import { portfolioData, testimonialData } from "../data"
 
-export default function Home({ portfolioData }) {
+export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
@@ -16,13 +16,7 @@ export default function Home({ portfolioData }) {
       </Head>
       <Intro />
       <Portfolio portfolioData={portfolioData}/>
+      <Testimonials testimonialData={testimonialData}/>
     </div>
   );
-}
-
-export const getStaticProps = async () => {
-  const portfolioData = data;
-  return {
-    props: { portfolioData },
-  };
 };
