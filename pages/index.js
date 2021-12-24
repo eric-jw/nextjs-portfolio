@@ -5,7 +5,7 @@ import Intro from '../components/Intro'
 import Portfolio from '../components/Portfolio'
 import { data } from "../data"
 
-export default function Home({ portfolio }) {
+export default function Home({ portfolioData }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -15,14 +15,14 @@ export default function Home({ portfolio }) {
         <meta name="description" content="My personal website created by create-next-app" />
       </Head>
       <Intro />
-      <Portfolio />
+      <Portfolio portfolioData={portfolioData}/>
     </div>
   );
 }
 
 export const getStaticProps = async () => {
-  const portfolio = data;
+  const portfolioData = data;
   return {
-    props: { portfolio },
+    props: { portfolioData },
   };
 };
